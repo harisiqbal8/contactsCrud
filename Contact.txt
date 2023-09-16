@@ -1,0 +1,32 @@
+//State
+First Name
+Last Name
+PhoneNumber
+
+
+//For Edit
+var newPerson = { 
+  recordID: recordId (From Parameter),
+  displayName: firstnamestate +" "+ lastnamestate
+  phoneNumbers: [{
+    label: 'mobile',
+    number: phonenumberstate,
+  },
+  ]
+}
+Contacts.editExistingContact(newPerson).then(contact => {
+    //contact updated
+});
+
+
+
+//For Save
+var newPerson = { 
+  displayName: firstnamestate +" "+ lastnamestate
+  phoneNumbers: [{
+    label: 'mobile',
+    number: phonenumberstate,
+  },
+  ]
+}
+Contacts.addContact(newPerson)
