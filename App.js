@@ -8,7 +8,9 @@ function AddContactScreen() {
   const [phoneNumber, setPhoneNumber] = useState('');
 
   const handleAddContact = async () => {
+    // const { status } = await Contacts.isAvailableAsyncAsync();
     const { status } = await Contacts.requestPermissionsAsync();
+    // const { status } = await Contacts.getPermissionsAsync();
 
     if (status === 'granted') {
       const contact = {
@@ -33,6 +35,9 @@ function AddContactScreen() {
       console.log('Permission to write contacts denied.');
       // Handle the case where permission is denied
     }
+    setFirstName('');
+    setLastName('');
+    setPhoneNumber('');
   };
 
   return (
